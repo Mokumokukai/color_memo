@@ -1,12 +1,14 @@
 version: '3.8'
 services:
- react-app:
+  frontend:
    build:
      context: .
      dockerfile: Dockerfile
+   environment:
+      - NODE_ENV=development
    volumes:
-     - ./:/src
-   command: sh -c "cd frontend && PORT=3001 yarn start"
+     - ./:/usr/src/app
+   command: sh -c "cd frontend && yarn start"
    ports:
-     - "3001:3001"
-   stdin_open: true
+     - "3000:3000"
+   tty: true
