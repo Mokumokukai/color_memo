@@ -1,4 +1,6 @@
 import { ColorMemoDataType } from "../types";
+import Box from '@mui/material/Box';
+
 import ColorMemoInside from "./ColorMemoInside";
 const style: React.CSSProperties = {
     border: "solid",
@@ -12,11 +14,11 @@ const style: React.CSSProperties = {
 };
 
 const ColorMemoCard = () => {
-    return(
+    return (
         <div className="color-memo-card">
-            <div style={style}>
-                <ColorMemoInside/>
-            </div>
+            <Box sx={style}>
+                <ColorMemoInside />
+            </Box>
         </div>
     )
 }
