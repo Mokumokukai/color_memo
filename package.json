@@ -4,6 +4,8 @@
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.9.1",
     "@mui/styled-engine-sc": "^5.8.0",
+    "@types/react-color": "^3.0.6",
+    "react-color": "^2.19.3",
     "styled-components": "^5.3.5"
   }
 }

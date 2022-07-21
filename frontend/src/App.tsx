@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import TopPage from './pages/TopPage';
+import EditPage from './pages/EditPage';
 import { ColorMemoDataType } from './types';
 
 
@@ -14,6 +15,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<TopPage />} />
+        <Route path="/edit" element={<EditPage />} />
+
       </Routes>
     </BrowserRouter>
   );

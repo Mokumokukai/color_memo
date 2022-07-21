@@ -7,8 +7,8 @@ const style: React.CSSProperties = {
     backgroundColor: "#FF00FF",
     borderColor: "#FF00FF",
     borderRadius: "20px",
-    height: "100px",
-    width: "100px",
+    height: "100%",
+    aspectRatio: "1/1",
     color: "#61dafb",
     position: "relative"
 };

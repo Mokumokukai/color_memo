@@ -2,8 +2,8 @@ import Box from '@mui/material/Box';
 const style: React.CSSProperties = {
   backgroundColor: "#FFFFFF",
   borderRadius: "5px",
-  height: "50px",
-  width: "50px",
+  height: "50%",
+  aspectRatio: "1/1",
   position: "absolute",
   transform: "translate(-50%, -50%)",
   left: "50%",
