@@ -1,14 +1,7 @@
 import ColorMemoCard from "../components/ColorMemoCard";
 import { Box, Grid } from "@mui/material";
 import React from 'react';
-import {
-    AlphaPicker, BlockPicker, ChromePicker, CirclePicker,
-    CompactPicker, GithubPicker, HuePicker, MaterialPicker,
-    PhotoshopPicker, SketchPicker, SliderPicker, SwatchesPicker,
-    TwitterPicker, CustomPicker, InjectedColorProps, ColorResult,
-    Color
-} from "react-color";
-import { Alpha, Checkboard, EditableInput, Hue, Saturation } from "react-color/lib/components/common";
+import { HexColorPicker } from "react-colorful";
 
 const EditPage = () => {
     return (
@@ -18,7 +11,7 @@ const EditPage = () => {
                     <ColorMemoCard></ColorMemoCard>
                 </Box>
                 <Box gridColumn="span 3">
-                    <SketchPicker />
+                    <HexColorPicker />
                 </Box>
 
             </Box>
