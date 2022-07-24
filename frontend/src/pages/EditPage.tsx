@@ -1,13 +1,13 @@
 import ColorMemoCard from "../components/ColorMemoCard";
 import { Box, Grid } from "@mui/material";
-import { HexColorPicker } from "react-colorful";
+import { RgbaStringColorPicker } from "react-colorful";
 import { useState } from "react";
 import { render } from "@testing-library/react";
 
 
 const EditPage = () => {
-    const [outsideColor, setOutsideColor] = useState("#aabbcc");
-    const [insideColor, setInsideColor] = useState("#FF00FF");
+    const [outsideColor, setOutsideColor] = useState("#FFFF00FF");
+    const [insideColor, setInsideColor] = useState("#FFFF00FF");
 
     const [selected, setSelected] = useState(true)
 
@@ -21,10 +21,10 @@ const EditPage = () => {
     }
     let ColorPicker;
     if (selected) {
-        ColorPicker = <HexColorPicker color={outsideColor} onChange={setOutsideColor} />;
+        ColorPicker = <RgbaStringColorPicker color={outsideColor} onChange={setOutsideColor} />;
 
     } else {
-        ColorPicker = <HexColorPicker color={insideColor} onChange={setInsideColor} />;
+        ColorPicker = <RgbaStringColorPicker color={insideColor} onChange={setInsideColor} />;
 
     }
     return (
@@ -32,7 +32,7 @@ const EditPage = () => {
         <div className="edit-page-container">
             <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
                 <Box gridColumn="span 6">
-                    <ColorMemoCard color={outsideColor} insideColor={insideColor} onClick={handleClick} ></ColorMemoCard>
+                    <ColorMemoCard color={outsideColor} onClick={handleClick} children={insideColor} ></ColorMemoCard>
                 </Box>
                 <Box gridColumn="span 3">
                     {ColorPicker}
