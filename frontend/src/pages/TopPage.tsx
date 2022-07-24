@@ -2,10 +2,10 @@ import Grid from "@mui/material/Grid";
 import ColorMemoCard from "../components/ColorMemoCard";
 import { ColorPair } from "../types";
 import MOCK_COLORS from "../MOCKDATA";
-import React,{Fragment, useState} from "react";
+import { useState } from "react";
 
 const TopPage = () => {
-    const [colorPairs, setColorPairs] = useState<ColorPair[]>(MOCK_COLORS)
+    const [colorPairs] = useState<ColorPair[]>(MOCK_COLORS)
 
     const handleClick = (event: any) => {
 

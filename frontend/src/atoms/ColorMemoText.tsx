@@ -1,5 +1,4 @@
-import { FC } from 'react'
-import { text } from 'stream/consumers';
+
 type Props = {
     className?: string,
     color: string,

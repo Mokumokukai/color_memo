@@ -1,8 +1,7 @@
 import ColorMemoCard from "../components/ColorMemoCard";
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { RgbaStringColorPicker } from "react-colorful";
 import { useState } from "react";
-import { render } from "@testing-library/react";
 
 
 const EditPage = () => {

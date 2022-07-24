@@ -1,4 +1,3 @@
-import { FC, ReactNode } from 'react'
 import ColorMemoText from '../atoms/ColorMemoText';
 import ColorMemoBox from '../atoms/ColorMemoBox';
 type Props = {

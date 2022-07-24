@@ -1,5 +1,3 @@
-import { FC } from 'react'
-import { text } from 'stream/consumers';
 import Box from '@mui/material/Box'
 type Props = {
     className?: string,
