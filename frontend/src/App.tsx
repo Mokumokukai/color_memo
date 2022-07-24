@@ -7,7 +7,6 @@ import {
 import './App.css';
 import TopPage from './pages/TopPage';
 import EditPage from './pages/EditPage';
-import { ColorMemoDataType } from './types';
 
 
 function App() {

@@ -42,7 +42,7 @@ ColorMemoInside.defaultProps = {
   className: '',
   insideText: 'TEST',
   color: "#FFFF00FF",
-  type: "box"
+  type: "text"
 
 }
 export default ColorMemoInside;
