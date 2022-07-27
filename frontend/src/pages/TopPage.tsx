@@ -1,30 +1,37 @@
-import Grid from "@mui/material/Grid";
-import ColorMemoCard from "../components/ColorMemoCard";
-import { ColorPair } from "../types";
-import MOCK_COLORS from "../MOCKDATA";
-import { useState } from "react";
+import Grid from '@mui/material/Grid';
+import { useState } from 'react';
+import ColorMemoCard from '../components/ColorMemoCard';
+import { ColorPair } from '../types';
+import MOCK_COLORS from '../MOCKDATA';
 
-const TopPage = () => {
-    const [colorPairs] = useState<ColorPair[]>(MOCK_COLORS)
+function TopPage() {
+  const [colorPairs] = useState<ColorPair[]>(MOCK_COLORS);
 
-    const handleClick = (event: any) => {
+  const handleClick = (event: any) => {
+    console.log(event)
+  };
 
-    }
-    return (
-        <div className="top-page-container">
-            <Grid container rowSpacing={8} columnSpacing={10} spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                {Array.from(colorPairs).map((colorpair, index) => (
-                    <Grid item xs={2} sm={4} md={4} key={index}>
-                        <ColorMemoCard onClick={handleClick} color={colorpair.colors[0]} children={colorpair.colors[1]} />
-                    </Grid>
-                ))}
-            </Grid>
-
-
-        </div>
-    )
-
-};
-
+  return (
+    <div className="top-page-container">
+      <Grid
+        container
+        rowSpacing={8}
+        columnSpacing={10}
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+      >
+        {Array.from(colorPairs).map((colorpair, _) => (
+          <Grid item xs={2} sm={4} md={4} key={colorpair.id}>
+            <ColorMemoCard
+              onClick={handleClick}
+              color={colorpair.colors[0]}
+              insideColor={colorpair.colors[1]}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </div>
+  );
+}
 
 export default TopPage;

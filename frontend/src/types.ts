@@ -1,4 +1,4 @@
 export type ColorPair = {
-    id: number,
-    colors: string[]
-}
+  id: number;
+  colors: string[];
+};
