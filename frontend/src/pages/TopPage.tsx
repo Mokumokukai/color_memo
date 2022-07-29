@@ -1,14 +1,17 @@
 import Grid from '@mui/material/Grid';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import ColorMemoCard from '../components/ColorMemoCard';
 import { ColorPair } from '../types';
 import MOCK_COLORS from '../MOCKDATA';
 
 function TopPage() {
+  const navigate = useNavigate();
   const [colorPairs] = useState<ColorPair[]>(MOCK_COLORS);
 
-  const handleClick = (event: any) => {
-    console.log(event)
+  const handleClick = () => {
+    navigate('/edit');
   };
 
   return (
