@@ -1,24 +1,32 @@
-import { ColorMemoDataType } from "../types";
-import ColorMemoInside from "./ColorMemoInside";
-const style: React.CSSProperties = {
-    border: "solid",
-    backgroundColor: "#FF00FF",
-    borderColor: "#FF00FF",
-    borderRadius: "20px",
-    height: "100px",
-    width: "100px",
-    color: "#61dafb",
-    position: "relative"
+import Box from '@mui/material/Box';
+
+import ColorMemoInside from './ColorMemoInside';
+
+type Props = {
+  color: string;
+  insideColor: string;
+  onClick: (event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
-const ColorMemoCard = () => {
-    return(
-        <div className="color-memo-card">
-            <div style={style}>
-                <ColorMemoInside/>
-            </div>
-        </div>
-    )
-}
+function ColorMemoCard({ color, insideColor, onClick}: Props){
+  const style: React.CSSProperties = {
+    border: 'solid',
+    borderColor: color,
+    borderRadius: '20px',
+    height: '100%',
+    aspectRatio: '1/1',
+    position: 'relative',
+    backgroundColor: color,
+  };
+
+  return (
+    <div className="color-memo-card">
+      <Box sx={style} onClick={onClick} className="outside">
+        <ColorMemoInside color={insideColor} type="text" />
+      </Box>
+    </div>
+  );
+};
+
 
 export default ColorMemoCard;

@@ -1,16 +1,40 @@
-import ColorMemoCard from "../components/ColorMemoCard";
+import Grid from '@mui/material/Grid';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const TopPage = () =>{
-    return  (
-        <div className="top-page-container">
-            <div>
-                <ColorMemoCard></ColorMemoCard>
-            </div>
-            
-        </div>
-    )
+import ColorMemoCard from '../components/ColorMemoCard';
+import { ColorPair } from '../types';
+import MOCK_COLORS from '../MOCKDATA';
 
-};
+function TopPage() {
+  const navigate = useNavigate();
+  const [colorPairs] = useState<ColorPair[]>(MOCK_COLORS);
 
+  const handleClick = () => {
+    navigate('/edit');
+  };
+
+  return (
+    <div className="top-page-container">
+      <Grid
+        container
+        rowSpacing={8}
+        columnSpacing={10}
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+      >
+        {Array.from(colorPairs).map((colorpair, _) => (
+          <Grid item xs={2} sm={4} md={4} key={colorpair.id}>
+            <ColorMemoCard
+              onClick={handleClick}
+              color={colorpair.colors[0]}
+              insideColor={colorpair.colors[1]}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </div>
+  );
+}
 
 export default TopPage;
