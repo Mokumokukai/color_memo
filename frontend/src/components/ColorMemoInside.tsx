@@ -41,8 +41,7 @@ function ColorMemoInside({ color, insideText, type }: Props) {
 }
 
 ColorMemoInside.defaultProps = {
-  insideText: "test"
-}
-
+  insideText: 'test',
+};
 
 export default ColorMemoInside;

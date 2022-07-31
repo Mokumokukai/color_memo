@@ -9,8 +9,7 @@ function EditPage() {
   const [selected, setSelected] = useState(true);
 
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
-
-    const classname = (event.target as Element).className
+    const classname = (event.target as Element).className;
 
     if (classname.indexOf('outside') > -1) {
       setSelected(true);

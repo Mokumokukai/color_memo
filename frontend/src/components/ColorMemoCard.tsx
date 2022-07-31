@@ -8,7 +8,7 @@ type Props = {
   onClick: (event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
-function ColorMemoCard({ color, insideColor, onClick}: Props){
+function ColorMemoCard({ color, insideColor, onClick }: Props) {
   const style: React.CSSProperties = {
     border: 'solid',
     borderColor: color,
@@ -26,7 +26,6 @@ function ColorMemoCard({ color, insideColor, onClick}: Props){
       </Box>
     </div>
   );
-};
-
+}
 
 export default ColorMemoCard;
