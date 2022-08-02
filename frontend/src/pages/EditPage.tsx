@@ -17,6 +17,7 @@ function EditPage() {
       setSelected(false);
     }
   };
+
   let ColorPicker;
   if (selected) {
     ColorPicker = (
