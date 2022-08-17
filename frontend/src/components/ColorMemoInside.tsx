@@ -16,33 +16,34 @@ const baseChildCss = {
 };
 
 function ColorMemoInside({ color, insideText, type }: Props) {
-  let insideComponent;
-  if (type === 'box') {
-    insideComponent = <ColorMemoBox color={color} typoCss={baseChildCss} />;
-  } else if (type === 'text') {
-    insideComponent = (
-      <ColorMemoText
-        color={color}
-        insideText={insideText}
-        typoCss={baseChildCss}
-      />
-    );
-  } else {
-    insideComponent = (
-      <ColorMemoText
-        color={color}
-        insideText={insideText}
-        typoCss={baseChildCss}
-      />
-    );
-  }
+  const insideComponent = () => {
+    switch (type) {
+      case 'box':
+        return <ColorMemoBox color={color} typoCss={baseChildCss} />;
+      case 'text':
+        return (
+          <ColorMemoText
+            color={color}
+            insideText={insideText}
+            typoCss={baseChildCss}
+          />
+        );
+      default:
+        return (
+          <ColorMemoText
+            color={color}
+            insideText={insideText}
+            typoCss={baseChildCss}
+          />
+        );
+    }
+  };
 
-  return <div>{insideComponent}</div>;
+  return <div>{insideComponent()}</div>;
 }
 
 ColorMemoInside.defaultProps = {
-  insideText: "test"
-}
-
+  insideText: 'test',
+};
 
 export default ColorMemoInside;

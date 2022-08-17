@@ -1,4 +1,3 @@
-
 type Props = {
   color: string;
   typoCss: object;
@@ -29,7 +28,7 @@ function ColorMemoText({ color, typoCss, insideText }: Props) {
 }
 
 ColorMemoText.defaultProps = {
-    insideText: "test"
+  insideText: 'test',
 };
 
 export default ColorMemoText;
