@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-
 import ColorMemoInside from './ColorMemoInside';
 
 type Props = {
@@ -22,7 +21,7 @@ function ColorMemoCard({ color, insideColor, onClick }: Props) {
   return (
     <div className="color-memo-card">
       <Box sx={style} onClick={onClick} className="outside">
-        <ColorMemoInside color={insideColor} type="text" />
+        <ColorMemoInside color={insideColor} type="box" />
       </Box>
     </div>
   );

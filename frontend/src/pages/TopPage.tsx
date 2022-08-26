@@ -1,7 +1,9 @@
 import Grid from '@mui/material/Grid';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+// @types/hello-colorでtypeを定義したので、補完は効くがeslintでエラーが出る。
+// eslint-disable-next-line
+import hello from 'hello-color';
 import ColorMemoCard from '../components/ColorMemoCard';
 import { ColorPair } from '../types';
 import MOCK_COLORS from '../MOCKDATA';
@@ -9,10 +11,10 @@ import MOCK_COLORS from '../MOCKDATA';
 function TopPage() {
   const navigate = useNavigate();
   const [colorPairs] = useState<ColorPair[]>(MOCK_COLORS);
-
   const handleClick = () => {
     navigate('/edit');
   };
+  
 
   return (
     <div className="top-page-container">
@@ -28,7 +30,7 @@ function TopPage() {
             <ColorMemoCard
               onClick={handleClick}
               color={colorpair.colors[0]}
-              insideColor={colorpair.colors[1]}
+              insideColor={hello(colorpair.colors[0]).color}
             />
           </Grid>
         ))}
