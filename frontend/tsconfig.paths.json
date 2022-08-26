@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "hello-color": ["types/hello-color"]
+      },
+    }
+  }

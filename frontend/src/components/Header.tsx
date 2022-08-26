@@ -1,6 +1,5 @@
-import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 function Header() {
 
     return (

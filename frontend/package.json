@@ -13,6 +13,7 @@
     "@types/jest": "^28.1.8",
     "@types/node": "^18.7.13",
     "@types/react-dom": "^18.0.6",
+    "hello-color": "^1.0.2",
     "install": "^0.13.0",
     "npm": "^8.18.0",
     "react": "^18.2.0",
