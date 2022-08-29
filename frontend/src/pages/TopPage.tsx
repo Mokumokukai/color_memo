@@ -5,12 +5,16 @@ import { useNavigate } from 'react-router-dom';
 // eslint-disable-next-line
 import hello from 'hello-color';
 import ColorMemoCard from '../components/ColorMemoCard';
-import { ColorPair } from '../types';
-import MOCK_COLORS from '../MOCKDATA';
+import { ColorPair, IRandomColorProvider } from '../types';
+import RandomColorCreater from "../utils/randomColorCreater";
+import RandomColorPresenter from "../utils/randomColorPresenter";
 
 function TopPage() {
   const navigate = useNavigate();
-  const [colorPairs] = useState<ColorPair[]>(MOCK_COLORS);
+  const randomColorPresenter = new RandomColorPresenter(new Array<IRandomColorProvider>(
+    new RandomColorCreater()
+  ))
+  const [colorPairs] = useState<ColorPair[]>(randomColorPresenter.GetColors(10));
   const handleClick = () => {
     navigate('/edit');
   };
