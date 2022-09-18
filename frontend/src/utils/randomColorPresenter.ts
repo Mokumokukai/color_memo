@@ -1,21 +1,18 @@
-
 import { ColorPair, IRandomColorProvider } from '../types'
 
 export default class RandomColorPresenter {
-    strategies: Array<IRandomColorProvider>;
+  strategies: Array<IRandomColorProvider>
 
-    constructor(strategies: Array<IRandomColorProvider>) {
-        this.strategies = strategies;
+  constructor(strategies: Array<IRandomColorProvider>) {
+    this.strategies = strategies
+  }
+
+  GetColors(num: number) {
+    const colorPairs = new Array<ColorPair>()
+    for (let i = 0; i < num; i += 1) {
+      colorPairs.push(this.strategies[0].getRandomColor())
     }
 
-    GetColors(num: number) {
-        const colorPairs = new Array<ColorPair>();
-        for (let i = 0; i < num; i += 1) {
-            colorPairs.push(this.strategies[0].getRandomColor());
-        }
-
-        return colorPairs;
-
-    }
-
+    return colorPairs
+  }
 }

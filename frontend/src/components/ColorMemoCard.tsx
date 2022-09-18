@@ -1,13 +1,13 @@
-import Box from '@mui/material/Box';
-import ColorMemoInside from './ColorMemoInside';
+import Box from '@mui/material/Box'
+import ColorMemoInside from './ColorMemoInside'
 
 type Props = {
-  color: string;
-  insideColor: string;
-  onClick: (event: React.MouseEvent<HTMLInputElement>) => void;
-};
+  color: string
+  insideColor: string
+  onClick: (event: React.MouseEvent<HTMLInputElement>) => void
+}
 
-function ColorMemoCard({ color, insideColor, onClick }: Props) {
+function ColorMemoCard({ color, insideColor, onClick }: Props): JSX.Element {
   const style: React.CSSProperties = {
     border: 'solid',
     borderColor: color,
@@ -16,7 +16,7 @@ function ColorMemoCard({ color, insideColor, onClick }: Props) {
     aspectRatio: '1/1',
     position: 'relative',
     backgroundColor: color,
-  };
+  }
 
   return (
     <div className="color-memo-card">
@@ -24,7 +24,7 @@ function ColorMemoCard({ color, insideColor, onClick }: Props) {
         <ColorMemoInside color={insideColor} type="box" />
       </Box>
     </div>
-  );
+  )
 }
 
-export default ColorMemoCard;
+export default ColorMemoCard
