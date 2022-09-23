@@ -22,7 +22,9 @@ const app = initializeApp(firebaseConfig);
 type Error = {
   message: string;
 };
-const SignInPage = function () {
+
+// eslint-disable-next-line
+const SignInPage = () => {
   const auth = getAuth();
   const navigate = useNavigate();
   const signInWithGoogle = () => {
@@ -34,7 +36,6 @@ const SignInPage = function () {
         if (user.user.displayName === null) {
           throw new Error('failed to login');
         }
-        alert(`success : ${user.user.displayName}さんでログインしました`);
         async function setToken() {
           const token = await auth.currentUser?.getIdToken(true);
           if (token !== undefined) {
@@ -46,7 +47,10 @@ const SignInPage = function () {
         navigate('/');
       })
       .catch((error: Error) => {
-        alert(error.message);
+        // toastなどで表示するようにする。
+        navigate('/signin');
+        // eslint-disable-next-line
+        console.log(error);
       });
   };
 
