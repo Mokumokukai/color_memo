@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import TopPage from './pages/TopPage';
 import EditPage from './pages/EditPage';
-import SignInPage from "./pages/SigninPage";
+import SignInPage from './pages/SigninPage';
 
 function App() {
   return (
@@ -12,7 +12,6 @@ function App() {
         <Route path="/" element={<TopPage />} />
         <Route path="/edit" element={<EditPage />} />
         <Route path="/signin" element={<SignInPage />} />
-
       </Routes>
     </BrowserRouter>
   );

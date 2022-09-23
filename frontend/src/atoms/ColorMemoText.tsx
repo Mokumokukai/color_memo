@@ -1,4 +1,4 @@
-import "./ColorMemoText.css";
+import './ColorMemoText.css';
 
 type Props = {
   color: string;
@@ -9,7 +9,7 @@ type Props = {
 function ColorMemoText({ color, typoCss, insideText }: Props) {
   const style: React.CSSProperties = {
     ...typoCss,
-    color
+    color,
   } as React.CSSProperties;
 
   return (
