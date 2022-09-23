@@ -18,7 +18,6 @@ function TopPage() {
   const handleClick = () => {
     navigate('/edit');
   };
-  
 
   return (
     <div className="top-page-container">
@@ -29,7 +28,7 @@ function TopPage() {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
-        {colorPairs.map(colorpair => (
+        {colorPairs.map((colorpair) => (
           <Grid item xs={2} sm={4} md={4} key={colorpair.id}>
             <ColorMemoCard
               onClick={handleClick}
