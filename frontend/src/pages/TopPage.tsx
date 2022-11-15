@@ -1,5 +1,6 @@
 import Grid from '@mui/material/Grid';
-import { useState } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 // @types/hello-colorでtypeを定義したので、補完は効くがeslintでエラーが出る。
 // eslint-disable-next-line
@@ -11,6 +12,17 @@ import MOCK_COLORS from '../MOCKDATA';
 function TopPage() {
   const navigate = useNavigate();
   const [colorPairs] = useState<ColorPair[]>(MOCK_COLORS);
+  useEffect(() => {
+    const fetch = async () =>{
+      console.log(process.env.REACT_APP_END_POINT!)
+      const result = await axios.get(process.env.REACT_APP_END_POINT!);
+      console.log(result);
+    }
+    fetch().catch(()=>{
+      console.log("failed to get");
+      // TODO 画面に何かエラー文言を表示
+    })
+  }, []);
   const handleClick = () => {
     navigate('/edit');
   };
