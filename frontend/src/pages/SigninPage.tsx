@@ -27,6 +27,16 @@ type Error = {
 const SignInPage = () => {
   const auth = getAuth();
   const navigate = useNavigate();
+  async function setToken() {
+    const token = await auth.currentUser?.getIdToken(true);
+    if (token !== undefined) {
+      localStorage.setItem('token', token);
+      console.log("login success");
+
+      return "success";
+    }
+    throw new Error('failed to login');
+  }
   const signInWithGoogle = () => {
     // Googleプロバイダオブジェクトのインスタンスを作成
     const provider = new GoogleAuthProvider();
@@ -36,15 +46,10 @@ const SignInPage = () => {
         if (user.user.displayName === null) {
           throw new Error('failed to login');
         }
-        async function setToken() {
-          const token = await auth.currentUser?.getIdToken(true);
-          if (token !== undefined) {
-            localStorage.setItem('token', token);
-          }
-        }
-        // eslint-disable-next-line
-        async () => await setToken();
-        navigate('/');
+
+        return setToken()
+      }).then(()=>{
+        navigate('/')
       })
       .catch((error: Error) => {
         // toastなどで表示するようにする。
